@@ -7,18 +7,16 @@ Volume
 AdjClose 
 '''
 
-from curses import window
+
 import tkinter
-from turtle import color
 import  pandas as pd
 import numpy as np
 from tkinter import ttk
 from matplotlib import pyplot as plt
 from pandas_datareader import data #Funcion que permite importar desde la API de finance 
 import ta #Esta libreria y sus submodulos nos calcula los indicadores técnicos a partir de un dataframe de entrada
-from ta.utils import dropna
-from ta.volatility import BollingerBands
-from sys import argv
+#from ta.utils import dropna
+#from ta.volatility import BollingerBands
 from tkinter import *  #Libreria en donde se montó la interfaz gráfica 
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import datetime as dt #Librearia para importar fecha actual
