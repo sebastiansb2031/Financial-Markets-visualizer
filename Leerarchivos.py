@@ -30,7 +30,9 @@ import matplotlib.dates as mpl_dates
 import matplotlib.colors as mcolors
 
 '''
-Introducción: Las lineas de código comentadas, algunas son de prueba o inicialmente se tomaron de otros montaje de codigo para adaptarlas al nuestro
+Introducción: Las lineas de código comentadas, algunas son de prueba o inicialmente se tomaron de otros montaje de codigo para adaptarlas al nuestro. Por ahora las correcciones que habría que hacer sería mirar
+más a fondo por qué algunos intervalos de tiempo no son permitidos (para ser un problema de irregularidad en el tamaño del dataframe), eso y mostrar bien los diagrama de velas porque a pesar de que se muestran no está
+representado correctamente de forma visual
 '''
 
 
@@ -72,7 +74,7 @@ def Graficar_indicadores():
  plt.style.use('seaborn-paper') #Fijamos el estilo o tema visual de las gráficas, este es particularmente porque ajusta la escala de las gráficas. Si usaramos otro tema tendríamos que ajustar los vectores y la escala
  ###############################################3INTERFAZ_GRAFICA###############################################################################https://datatofish.com/matplotlib-charts-tkinter-gui/
 
- window=Tk()#usamos tkinter e instanciamos una nueva ventana, esta ventana es la que muestra las 4 gráficas de matplotlib
+ window=Tk()#Creamos una nueva instancia de ventana, esta es la nueva ventana que nos muestra las 4 gráficas una vez que ya ingresamos el mercado y las escalas de tiempo con e1..e3.get()
  window.title('Plotting in Tkinter')#Titulo de la ventana
  window.geometry("500x500") #Fijamos el tamaño de la venta
  #Graficacion de todos los indicadores
@@ -111,8 +113,7 @@ def Graficar_indicadores():
 
 Simbolos_cotizacion = {'Indices' : '^GSPC', 'Acciones' : 'TSLA', 'Criptomonedas': ['BTC-USD','ETH-USD','BNB-USD'] } #Se usa la estructura de datos de diccionarios y se imprimer en la primera ventana para que el usuario vea una pequeña lista de los indicadores 
  #Create an Entry widget to accept User Input
-window2=Tk() #Creamos una nueva instancia de ventana, esta es la nueva ventana que nos muestra las 4 gráficas una vez que ya ingrasamos el mercado y las escalas de tiempo con e1..e3.get()
-window2.title('Datos de entrada')
+window2=Tk() #Creamos una nueva instancia de ventana, esta es la primera ventana que muestra al correr el programa
 window2.geometry("500x500")#Tamaño de la nueva ventana que muestra las gráficas
 tkinter.Label(window2, 
          text="Tiempo total de muestreo").grid(row=0)
